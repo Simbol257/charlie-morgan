@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>The Imperium Agency</title>
+<script src="https://kit.fontawesome.com/0d018f338f.js" crossorigin="anonymous"></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+</style>
+<style type="text/css">
+html,body{
+width:100vw;
+scroll-behavior:smooth;
+}
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+color:#2B2D42;
+font-family:'Inter';
+overflow-x:hidden;
+outline:;
+}
+a{
+text-decoration:none;
+color:#2B2D42;
+}
+
+/* Navigation CSS */
+nav{
+width:100%;
+padding:24px 36px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+nav img,footer img{
+width:150px;
+height:150px;
+}
+.fa-bars{
+font-size:5em;
+}
+.fa-close{
+font-size:2.25em;
+}
+.sidenav{
+position:absolute;
+top:0;
+left:0;
+padding:24px;
+width:100vw;
+height:100vh;
+background-color:#EDF2F4;
+font-size:48px;
+opacity:0;
+z-index:-1;
+transition:all 0.15s;
+}
+.sidenav ul{
+width:100vw;
+padding:3.5em 48px;
+list-style-type:none;
+}
+.sidenav ul li{
+margin:2em 0 0 0;
+line-height:2em;
+}
+.sidenav i{
+position:absolute;
+top:24px;
+right:36px;
+}
+.hero,.hero--calendly ,.feature,.benefits ,.client-stories ,.hiring,footer{
+padding:120px 60px;
+}
+
+/* Hero Section */
+.hero{
+background:#2B2D42;
+}
+.hero span,.hero--calendly span{
+width:90%;
+color:#EDF2F4;
+display:block;
+margin:0 auto;
+}
+.hero--title{
+font-size:4em;
+font-weight:700;
+text-align:center;
+padding:24px;
+}
+.hero--subtitle{
+font-size:2em;
+font-weight:400;
+opacity:0.76;
+text-align:center;
+padding:24px;
+}
+iframe {
+width:95%;
+aspect-ratio:16 / 9;
+display:block;
+margin:60px auto;
+background:#fff;
+}
+.hero--calendly{
+background:#EDF2F4;
+}
+.hero--calendly span{
+color:#2B2D42;
+}
+.calendly-inline-widget{
+background:#EDF2F4;
+width:95%;
+height:950px;
+margin:60px auto;
+}
+
+/* Features Section  */
+.feature--title {
+width:90%;
+display:block;
+margin:0 auto;
+padding:24px;
+font-size:3em;
+font-weight:700;
+text-align:center;
+}
+.feature--list{
+margin:60px auto;
+}
+.feature section{
+display:flex;
+align-items:center;
+}
+.feature img{
+width:64px;
+height:64px;
+margin:6px 12px;
+}
+.feature--subtitle {
+font-size:2.5em;
+font-weight:600;
+text-align:left;
+margin:12px 0;
+display:inline;
+}
+.feature--paragraph {
+font-size:1.25em;
+font-weight:300;
+text-align:left;
+margin:6px 0;
+display:block;
+color:rgba(43, 45, 66,0.7);
+}
+
+/* Client Stories  */
+.client-stories {
+background:#EDF2F4;
+}
+.carousel{
+max-width:4000px;
+overflow-x:auto;
+display:flex;
+scroll-snap-type:x mandatory;
+scroll-behavior:smooth;
+scrollbar-width:0px;
+}
+html::-webkit-scrollbar{
+display:none;
+}
+.carousel::-webkit-scrollbar{
+display:none;
+}
+.carousel-item {
+flex:1 0 100%;
+scroll-snap-align:start;
+scroll-snap-stop:always;
+}
+.carousel-item img{
+width:400px;
+height:100px;
+margin:24px 0;
+display:block;
+}
+.carousel--subtitle{
+margin:24px 0;
+display:block;
+font-size:2.5em;
+font-weight:600;
+text-align:left;
+}
+.carousel--paragraph{
+margin:24px 0;
+display:block;
+font-size:1.25em;
+font-weight:300;
+text-align:left;
+color:rgba(43, 45, 66,0.7);
+}
+.carousel--nav {
+width:100%;
+min-height:80px;
+column-gap:16px;
+display:flex;
+justify-content:center;
+align-items:center;
+margin:24px auto;
+overflow-y:visible;
+}
+.carousel--nav > *{
+width:16px;
+height:16px;
+border-radius:50%;
+background:#111;
+opacity:0.5;
+z-index:10;
+transition:scale ease 250ms;
+}
+/* Apply hover effects only if the device can hover */
+@media (hover: hover) and (pointer: fine) {
+  .carousel--nav > *:hover {
+    scale: 2; /* Example hover effect */
+  }
+}
+
+/* Hiring Section */
+.hiring--title{
+margin:24px 0;
+display:block;
+font-size:3.25em;
+font-weight:600;
+text-align:left;
+}
+.hiring--subtitle{
+margin:24px 0;
+display:block;
+font-size:1.25em;
+font-weight:300;
+text-align:left;
+color:rgba(43, 45, 66,0.7);
+}
+.hiring--btn{
+padding:24px 48px;
+background:#2B2D42;
+color:#EDF2F4;
+border-radius:48px;
+font-size:1.5em;
+text-transform:uppercase;
+}
+
+/*  Footer Section */
+
+.footer--nav,.socials,.policies{
+margin:48px 0;
+}
+.footer--nav a{
+font-size:2.5em;
+margin:12px 0;
+display:block;
+opacity:0.85;
+}
+.socials a{
+font-size:2.5em;
+margin:12px 0;
+opacity:0.85;
+display:flex;
+align-items:center;
+}
+.socials img{
+width:48px;
+height:48px;
+margin:0 24px;
+}
+footer hr{
+margin:24px 0;
+}
+.policies{
+display:flex;
+flex-direction:column;
+}
+.policies a{
+margin:12px 0;
+font-size:2.5em;
+opacity:0.85;
+}
+</style>
+</head>
+<body>
+<nav>
+<a href="/" ><img src="logo.png" alt="The Imperium Agency Logo"></a>
+<i id="open-btn"  class="fa-solid fa-light fa-bars"></i>
+<div class="sidenav" >
+<i id="close-btn"  class="fa-solid fa-light fa-close"></i>
+<ul>
+<a href="about.html" ><li>About Us</li></a>
+<a href="services.html" ><li>Services</li></a>
+<a href="https://www.theimperiumagency.com/ia-growth-call" ><li>Easy Grow</li></a>
+<a href="https://www.theimperiumagency.com/imperium-mastermind-ia" ><li>Imperium Mastermind</li></a>
+</ul>
+</div>
+</nav>
+<div class="hero">
+<span class="hero--title">Helping You Acquire More Clients</span>
+<span class="hero--subtitle">Watch the Video below to see if You meet the Criteria</span>
+<video controls poster="thumbnail.jpg" alt="Who this consulting is for">
+  <source src="video.mp4" type="video/mp4">
+  <source src="video.ogg" type="video/ogg">
+Your browser does not support the video tag.
+</video>
+</div>
+<div class="hero--calendly">
+<span class="hero--title">Complete the Mastermind Application</span>
+<span class="hero--subtitle">*Your answers will remain completely confidential*</span>
+<!-- Calendly inline widget begin -->
+<div class="calendly-inline-widget" data-url="https://calendly.com/thakuripratik257/testevent" style="" ></div>
+<script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+<!-- Calendly inline widget end -->
+</div>
+
+<div class="feature">
+<span class="feature--title">Unlock Your Potential with Proven Mindset Systems</span>
+<div class="feature--list">
+<div>
+<section>
+<img src="offer.png">
+<span class="feature--subtitle">Create Irresistible Offers</span>
+</section>
+<span class="feature--paragraph">Our Effective Offer Creation Strategies will help you stand out from the Competitionand attract your Ideal Clients.</span>
+</div>
+<div>
+<section>
+<img src="calendar.png">
+<span class="feature--subtitle">Effortlessly Schedule Appointments</span>
+</section>
+<span class="feature--paragraph">Our reliable appointment setting techniques will streamline your client acquisition process and save you time.</span>
+</div>
+<div>
+<section>
+<img src="money.png">
+<span class="feature--subtitle">Close more Deals</span>
+</section>
+<span class="feature--paragraph">Our efficient deal closing strategies will help you convert leads into paying clients and grow your business.</span>
+</div>
+</div>
+</div>
+<div class="client-stories">
+<div class="carousel">
+<div id="item-1" class="carousel-item">
+<iframe src="https://www.youtube.com/embed/DKhFOvYHPIE?si=p0UKKfB1f0aSmcBF" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<img src="stars.png" alt="5 Star Rating">
+<span class="carousel--subtitle">This agency transformed our client acquisition. Their mindset coaching and strategic planning resulted in a steady stream of high-quality leads. Highly recommended!</span>
+<span class="carousel--paragraph">Matt (35k/month)</span>
+</div>
+<div id="item-2" class="carousel-item">
+<iframe src="https://www.youtube.com/embed/1R4cMs1a97k?si=du9RiGpNf9v8Kla7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<img src="stars.png" alt="5 Star Rating">
+<span class="carousel--subtitle">The offer creation service was a game-changer. Our client conversion rates skyrocketed thanks to their expert guidance. Exceptional results!</span>
+<span class="carousel--paragraph">Michael (25k/month)</span>
+</div>
+<div id="item-3"  class="carousel-item">
+<iframe src="https://www.youtube.com/embed/FLqykTXgtvY?si=JfIklkq4DnfGMyqP" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<img src="stars.png" alt="5 Star Rating">
+<span class="carousel--subtitle">Their appointment setting strategies are incredibly effective. We've secured more client meetings in a month than we used to in a year!"</span>
+<span class="carousrl--paragraph">Zach (2=>15 employees)</span>
+</div>
+<div id="item-4"  class="carousel-item">
+<iframe src="https://www.youtube.com/embed/ItM52OG7-2o?si=TmE5kV5TLKI26jJz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<img src="stars.png" alt="5 Star Rating">
+<span class="carousel--subtitle">Closing deals has never been easier. The agency's techniques and support made a significant impact on our bottom line. Worth every penny.</span>
+<span class="carousel--paragraph">Austin (20k/month)</span>
+</div>
+<div id="item-5"  class="carousel-item">
+<iframe src="https://www.youtube.com/embed/FvLkuzW0z98?si=XqrBkloUa_sY1Gej" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<img src="stars.png" alt="5 Star Rating">
+<span class="carousel--subtitle">The team's expertise in mindset and client acquisition is unparalleled. They helped us overcome barriers and achieve our business goals quickly and efficiently.</span>
+<span class="carousel--paragraph">Joshua (15k/month)</span>
+</div>
+</div>
+<div class="carousel--nav">
+<a href="#item-1" ></a>
+<a href="#item-2" ></a>
+<a href="#item-3" ></a>
+<a href="#item-4" ></a>
+<a href="#item-5" ></a>
+</div>
+</div>
+<div class="hiring">
+<span class="hiring--title" >We're Hiring</span>
+<span class="hiring--subtitle">Watch the video below to see if you fit the criteria</span>
+<video controls poster="hiring.jpg" alt="Our Hiring Criteria">
+  <source src="hiring.mp4" type="video/mp4">
+  <source src="hiring.ogg" type="video/ogg">
+Your browser does not support the video tag.
+</video>
+<a class="hiring--btn" href="https://docs.google.com/forms/d/19ozfmidja_fjnyuhMq-vL1PxsbDQNojsgBdhKZ6MWxQ/viewform?edit_requested=true" >Apply Here</a>
+</div>
+<footer>
+<a href="/" ><img src="logo.png" alt="The Imperium Agency Logo" ></a>
+<div class="footer--nav">
+<span class="hiring--title">Navigate</span>
+<a href="about.html" >About Us</a>
+<a href="services.html" >Services</a>
+<a href="https://www.theimperiumagency.com/ia-growth-call" >Easy Grow</a>
+<a href="https://www.theimperiumagency.com/imperium-mastermind-ia" >Imperium Mastermind</a>
+</div>
+<div class="socials">
+<span class="hiring--title">Follow Me</span>
+<a href="https://www.youtube.com/charlesmorgan8?sub_confirmation=1" ><img src="youtube.png"><span>Youtube</span></a>
+<a href="https://www.instagram.com/charliemorganbiz/?hl=en" ><img src="instagram.png" ><span>Instagram</span></a>
+<a href="https://x.com/CharlieImperium?t=omc8gpqiqBb44mt-yq1f2A&s=35" ><img src="x.png" ><span>X</span></a>
+</div>
+<hr>
+<div class="policies">
+<a href="https://www.imperiumacquisition.com/privacy-policy" >Privacy Policy</a>
+<a href="https://www.imperiumacquisition.com/data-protection" >Data Protection</a>
+<a href="https://www.imperiumacquisition.com/data-protection-addendum" >Data Protection Appendum</a>
+<a href="https://www.imperiumacquisition.com/terms-and-conditions" >Terms and Conditions</a>
+<a href="https://www.imperiumacquisition.com/earnings-disclaimer" >Earnings Disclaimer</a>
+</div>
+
+</footer>
+
+<script type="text/javascript">
+document.getElementById("open-btn").addEventListener("click",function(){
+document.getElementsByClassName("sidenav")[0].style.opacity = 1
+document.getElementsByClassName("sidenav")[0].style.zIndex = 10
+})
+document.getElementById("close-btn").addEventListener("click",function(){
+document.getElementsByClassName("sidenav")[0].style.opacity = 0
+document.getElementsByClassName("sidenav")[0].style.zIndex = -1
+})
+
+</script>
+</body>
+</html>
